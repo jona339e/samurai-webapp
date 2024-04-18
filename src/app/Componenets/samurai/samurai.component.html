@@ -1,0 +1,62 @@
+
+<select [(ngModel)]="selectedSamurai" >
+    <option value="" disabled selected>Choose a samurai</option>
+    <option *ngFor="let samurai of samurais" [ngValue]="samurai">{{ samurai.name }}</option>
+</select>
+
+
+<div *ngIf="selectedSamurai">
+    <p>
+        Id: {{ selectedSamurai.id}}
+    </p>
+    <p>    
+        Name: {{ selectedSamurai.name}}
+    </p>
+    <p>
+        Age: {{ selectedSamurai.age}}
+    </p>
+    <p>
+        Weapon: {{ selectedSamurai.weapon}}
+    </p>
+    <p>
+        Clan: {{ selectedSamurai.clan}}
+    </p>
+    <p>
+        Status: {{ selectedSamurai.status}}
+    </p>
+    <p>
+        Image: {{ selectedSamurai.image}}
+    </p>
+    <p>
+        Description: {{ selectedSamurai.description}}
+    </p>
+</div>
+
+<hr>
+
+<div *ngFor="let item of samuraisFromApi">
+    <p>
+        Id: {{ item.id}}
+    </p>
+    <p>    
+        Name: {{ item.name}}
+    </p>
+    <p>
+        Age: {{ item.age}}
+    </p>
+    <p>
+        Description: {{ item.description}}
+    </p>
+
+</div>
+
+<!-- <ol *ngFor="let item of samurais">
+    <li>
+        Id: {{item.id}}
+    </li>
+
+    <ul>
+        <li>{{item.name}}</li>
+        <li>{{item.clan}}</li>
+    </ul>
+</ol> -->
